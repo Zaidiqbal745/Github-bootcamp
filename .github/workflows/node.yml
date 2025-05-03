@@ -8,7 +8,7 @@ on:
 
  jobs:
   build:
-   run-on: ubunto-latest
+   runs-on: ubunto-latest
 
    steps:
     -name: Checkout code
