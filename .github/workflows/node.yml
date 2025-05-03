@@ -1,0 +1,29 @@
+name:Node.js CI
+
+on:
+   push:
+        branches: [main]
+   pull_request:
+        branches: [main]
+
+ job:
+  build:
+   run-on: ubunto-latest
+
+   steps:
+    -name: Checkout code
+    uses: action/checkout@v3
+
+    -name: Setup Node.js
+    uses: action/setup-node@v3
+    with:
+    node-version:"18"
+
+    -name: Install dependencies
+     uses: npm install
+
+   -name: run tests
+    run: npm tests
+     
+     
+    
